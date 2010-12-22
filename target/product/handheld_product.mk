@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
     WallpaperCropper \
     frameworks-base-overlays
 
-ifeq ($(HAVOC_BUILD),)
+ifeq ($(ZENX_BUILD),)
 PRODUCT_PACKAGES += \
     LatinIME
 endif
