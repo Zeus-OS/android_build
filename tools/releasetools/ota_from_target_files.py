@@ -961,6 +961,35 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+
+  manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
+  build = target_info.GetBuildProp("ro.build.date")
+  android_version = target_info.GetBuildProp("ro.build.version.release")
+  build_id = target_info.GetBuildProp("ro.build.id")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.product.device")
+
+  script.Print("******************************************");
+  script.Print("                                          ");
+  script.Print("  _____          __  __     ___  ____     ");
+  script.Print(" |__  /___  _ __ \ \/ /    / _ \/ ___|    ");
+  script.Print("  / //  _  \ '_ \ \  / __ | | | \___ \    ");
+  script.Print("  / /_|  __/ | | |/  \ __ | |_| |___) |   ");
+  script.Print(" /____ \___|_| |_/_/\_\    \___/|____/    ");
+  script.Print("                                          ");
+  script.Print("                                          ");
+  script.Print("******************************************");
+  script.Print("************* Android 10.0 ***************");
+  script.Print("********** Welcome to ZenX-OS ************");
+  script.Print("******************************************");
+  script.Print(" Version       : %s"%(android_version));
+  script.Print(" Build ID      : %s"%(build_id));
+  script.Print(" Build Date    : %s"%(build));
+  script.Print(" Device        : %s"%(device));
+  script.Print(" Manufacturer  : %s"%(manufacturer));
+  script.Print(" Developer     : ZeNiXxX (Viktor Hermann) ");
+  script.Print("******************************************");
+  device_specific.FullOTA_InstallBegin()
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
