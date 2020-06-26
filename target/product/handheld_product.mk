@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += \
     Camera2 \
     Contacts \
     DeskClock \
+    ExactCalculator \
     Gallery2 \
     Launcher3QuickStep \
     OneTimeInitializer \
