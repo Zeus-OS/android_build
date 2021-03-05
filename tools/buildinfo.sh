@@ -54,6 +54,6 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
 fi
 
 echo "ro.lineage.device=$LINEAGE_DEVICE"
-echo "ro.zenx.device=$LINEAGE_DEVICE"
+echo "ro.zeus.device=$LINEAGE_DEVICE"
 
 echo "# end build properties"
