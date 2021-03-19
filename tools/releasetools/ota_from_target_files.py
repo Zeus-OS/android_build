@@ -823,14 +823,14 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   # Build info
-  script.Print("**************************");
-  script.Print("*   _____         __  __ *");
-  script.Print("*  |__  /___ _ __ \ \/ / *");
-  script.Print("*    / // _ \ '_ \ \  /  *");
-  script.Print("*   / /|  __/ | | |/  \  *");
-  script.Print("*  /____\___|_| |_/_/\_\ *");
-  script.Print("*                        *");
-  script.Print("****  Feel the Power  ****");
+  script.Print("***  Rule the World with  ***");
+  script.Print("*     _____                 *");
+  script.Print("*    / _  / ___ _   _ ___   *");
+  script.Print("*    \// / / _ \ | | / __|  *");
+  script.Print("*     / //\  __/ |_| \__ \  *");
+  script.Print("*    /____/\___|\__,_|___/  *");
+  script.Print("*                           *");
+  script.Print("****   Operation System  ****");
 
   buildid = target_info.GetBuildProp("ro.modversion")
   androidver = target_info.GetBuildProp("ro.build.version.release")
