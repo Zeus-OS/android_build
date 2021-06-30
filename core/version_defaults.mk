@@ -95,6 +95,12 @@ PLATFORM_VERSION_LAST_STABLE := 11
 # release build.  If this is a final release build, it is simply "REL".
 PLATFORM_VERSION_CODENAME.RP1A := REL
 
+ifndef PRODUCT_TARGET_VNDK_VERSION
+  # This is the SDK version of the prebuilt vendor image and is used to
+  # overlay vendor image from TARGET_COPY_OUT_VENDOR.
+  PRODUCT_TARGET_VNDK_VERSION := $(PLATFORM_SDK_VERSION)
+endif
+
 ifndef PLATFORM_VERSION_CODENAME
   PLATFORM_VERSION_CODENAME := $(PLATFORM_VERSION_CODENAME.$(TARGET_PLATFORM_VERSION))
   ifndef PLATFORM_VERSION_CODENAME
@@ -242,7 +248,7 @@ ifndef PLATFORM_SECURITY_PATCH
     #  If there is no $PLATFORM_SECURITY_PATCH set, keep it empty.
       PLATFORM_SECURITY_PATCH := 2021-06-05
 endif
-.KATI_READONLY := PLATFORM_SECURITY_PATCH
+#.KATI_READONLY := PLATFORM_SECURITY_PATCH
 
 ifndef PLATFORM_SECURITY_PATCH_TIMESTAMP
   # Used to indicate the matching timestamp for the security patch string in PLATFORM_SECURITY_PATCH.
